@@ -60,6 +60,8 @@ for source in sources:
         member['name'] = name_a.text.strip()
         details_url = member['details_url'] = urljoin(source_url, name_a.get('href'))
 
+        member['id'] = details_url.rsplit('/', 1)[1]
+
         img = item.cssselect('img')
         if img:
             member['image'] = urljoin(source_url, quote(img[0].get('src')))
