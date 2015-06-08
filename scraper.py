@@ -1,5 +1,6 @@
 import re
 from urlparse import urljoin
+from urllib import quote
 
 from HTMLParser import HTMLParser
 unescape = HTMLParser().unescape
@@ -61,7 +62,7 @@ for source in sources:
 
         img = item.cssselect('img')
         if img:
-            member['image'] = urljoin(source_url, img[0].get('src'))
+            member['image'] = urljoin(source_url, quote(img[0].get('src')))
 
         member_resp = requests.get(details_url, headers=request_headers)
         member_root = lxml.html.fromstring(member_resp.text)
