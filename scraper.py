@@ -83,6 +83,8 @@ for source in sources:
         except IndexError:
             constituency_text = details_table.xpath("//tr/td[contains(., 'Constituency')]/following::td")[0].text_content()
         
+        constituency_text = re.sub('\s+', ' ', constituency_text, flags=re.UNICODE)
+
         people_match = people_re.match(constituency_text) 
         noble_match = noble_re.match(constituency_text) 
         if people_match:
