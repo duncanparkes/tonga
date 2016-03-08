@@ -22,7 +22,7 @@ request_headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.
 data = []
 
 people_re = re.compile(ur"People's Representative for (.*)")
-noble_re = re.compile(ur"Noble's (?:No. (\d+) )?Representative for (.*)")
+noble_re = re.compile(ur"Noble's (?:No. (\d+) ?)?Representative for (.*)")
 
 
 legislatures_data = [
